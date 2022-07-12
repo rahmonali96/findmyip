@@ -17,7 +17,7 @@ public class IpController {
     @GetMapping("/findmyip")
     public String find(HttpServletRequest request) {
         String ip = request.getRemoteHost();
-        service.add(ip);
+        service.inc(ip);
         return service.check(ip) ? "You are blocked" : "You are welcome";
     }
 }
